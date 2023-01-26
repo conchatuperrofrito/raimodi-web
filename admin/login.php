@@ -6,18 +6,13 @@ if (isset($_SESSION['user_login'])) {
 if (isset($_POST['login'])) {
 	$username = $_POST['username'];
 	$password = $_POST['password'];
-
-
 	$input_arr = array();
-
 	if (empty($username)) {
 		$input_arr['input_user_error'] = "Username Is Required!";
 	}
-
 	if (empty($password)) {
 		$input_arr['input_pass_error'] = "Password Is Required!";
 	}
-
 	if (count($input_arr) == 0) {
 		$query = "SELECT * FROM `users` WHERE `username` = '$username';";
 		$result = mysqli_query($db_con, $query);
@@ -38,8 +33,6 @@ if (isset($_POST['login'])) {
 		}
 	}
 }
-
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -92,7 +85,10 @@ if (isset($_POST['login'])) {
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="../js/jquery-3.5.1.min.js"></script>
-	<script src="../js/bootstrap.min.js"></script>
+	<!-- aleta toas
+	 <script src="../js/bootstrap.min.js"></script> -->
+
+	<!-- muestra un toas cunado no hay usuario corecto -->
 	<script type="text/javascript">
 		$('.toast').toast('show')
 	</script>
